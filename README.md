@@ -1,1 +1,12 @@
 # MapOSR
+__Mapping Open Science Research - A Systematic Review of Empirical Studies on Open Science__
+
+## Description
+
+The Open Science concept remains unclear and blurry due to a variety of suggested meanings. Research that investigates respective scientists’ engagement in Open Science varies widely in the topics addressed, methods employed, and disciplines investigated, which makes it difficult to integrate and compare its results. To get a better understanding of the conceptual scope and boundaries of research on Open Science we aim at providing an openly accessible comparative overview and methodological reflection of empirical studies that focus on the attitudes, assessments, and practices of Open Science among individuals, communities, and organizations.  
+  
+With this approach, we intend to clarify the current understanding of Open Science on two levels: First, on the level of study contents, empirical studies capture diverse understandings and aspects of Open Science among different disciplinary, practitioner, geographical region and user groups among others. Numerous empirical studies have asked similar questions, but often to different groups of respondents. Therefore, a complementary overview of existing studies will allow us to summarize key findings and to identify key understandings and practices of Open Science across multiple respondents.  
+  
+On the second level of study methodologies, a critical review simultaneously takes into account that empirical studies are themselves shaping our perspective of Open Science. Therefore, we will further inductively study and compare the applied concepts and chosen methodological designs, which where chosen to capture attitudes, assessments, and practices of Open Science. On this level, we aim to explore and understand potentials and limits of methodologies, e.g. of quantitative and qualitative approaches.  
+  
+In our review, we started with a corpus of 104 studies investigating Open Science in a broad sense and will extend the corpus following a combined approach of snowball sampling and systematic literature search. This corpus is openly accessible via Zotero (https://bit.ly/34GaVHI). We include peer-reviewed studies as well as gray literature in a growing body of data and in a first step code studies regarding their Open Science topic, methodology, discipline, and targeted groups.
