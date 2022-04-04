@@ -1,0 +1,236 @@
+---
+title: "MapOSR"
+subtitle: "Inter-Rater-Agreement"
+author: "Jürgen Schneider"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    code_folding: hide
+    theme: cosmo
+editor_options: 
+  chunk_output_type: console
+---
+
+# Setup
+
+Libraries and R version.
+
+```{r setup, warning=F, message=F, comment=F}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning=FALSE, 
+                      message=FALSE, 
+                      comment=FALSE)
+library(tidyverse)
+library(irr)
+library(kableExtra)
+installed.packages()[names(sessionInfo()$otherPkgs), "Version"]
+R.Version()
+```
+
+# Import & Wrangling
+
+Data import. You can get the underlying data for this document on github ([github.com/JanaLasser/mapping-open-science-research](https://github.com/JanaLasser/mapping-open-science-research)) or `r xfun::embed_file(here::here("02_data_tidy/reliability.xlsx"), text="download it directly from this document")`.
+
+```{r import}
+# IMPORT ########################################################################
+rel <- rio::import(here::here("02_data_tidy/reliability.xlsx"))
+```
+
+There were 5 categories to be coded:
+
+* action
+* method
+* discipline
+* group
+* geo
+
+Since the categories had multiple-choice answer labels, these labels were dichotomized (dummy coded). For each __label__ on these categories, there is now a variable (e.g. group_librarian, group_policy, ...) on which "1" (applies to the publication) or "0" (does _not_ apply to the publication) was coded.
+
+Variables beginning with `c1_` refer to the first coder, variables beginning with `c2_` refer to the second coder.  
+
+Accordingly, this type of table:
+
+```{r import_out1}
+rel[1:5,] %>%
+  kbl() %>%
+  kable_styling()
+```
+
+\
+\
+\
+
+will be transformed through this code (click on 'code' button to see):
+
+```{r wrangling}
+# WRANGLING #####################################################################
+rel <- rel %>%
+  mutate(across(2:11, ~ str_remove_all(., "(a=|m=|d=|t=|geo=)"))) %>% # delete all prefix
+  pivot_longer(2:11, names_to = "variable", values_to = "values") %>%
+  separate_rows(values) %>%                  # multiple entries in cells as multiple rows
+  mutate(values = trimws(tolower(values)),   # delete whitespace, lowercase
+         values = case_when(
+                      values == "librarians" ~ "librarian",   # Typo recoding
+                      values == "bibliometric" ~ "biblio",    # there is no geo code zar -> zaf?
+                      values == "openpolicy" ~ "openpolicies",
+                      values == "opentool" ~ "opentools",
+                      values == "publishers" ~ "publisher",
+                      values == "researchers" ~ "researcher",
+                      values == "soscie" ~ "socscie",
+                      str_detect(variable, "geo") & (values == "none" | values == "all") ~ "unspecific",
+                      str_detect(variable, "discipline") & (values == "none" | values == "all") ~ "unspecific",
+                      TRUE ~ as.character(values)),
+         cells = 1) %>%                             # add new variable for coded values
+  dplyr::filter(values != "" & !is.na(values)) %>%  # delete empty cells
+  pivot_wider(id_cols = ID, 
+              names_from = c(variable, values),
+              values_from = cells, 
+              values_fill = 0)                      # add 0 indicating "not coded"
+```
+
+\
+\
+\
+
+
+into this kind of table:
+
+```{r import_out2}
+rel[1:5,] %>%
+  kbl() %>%
+  kable_styling()
+```
+
+# Agreement
+
+## No Agreement
+
+Are there any answer categories that __weren't__ given by one person (but were by the other)?
+
+```{r noAgreement}
+# AGREEMENT ###################################################################
+# checking which variables exist in c1 and c2 (and are thus coded by both coders)
+kappa_variablen <- data.frame(variablen = str_remove(names(rel[-1]), "(c1_|c2_)")) 
+
+kappa_variablen <- kappa_variablen %>%
+                      group_by(variablen) %>%
+                      dplyr::summarise(count = n())
+
+# Variables WITHOUR agreement
+kappa_variablen %>%
+  dplyr::filter(count != 2) %>%
+  print(n=30)
+```
+
+## Computing Agreement
+
+Loop over all response categories coded by both coders.
+
+```{r compAgreement}
+# Variables for which you can calculate match
+kappa_variablen <- kappa_variablen %>%
+  dplyr::filter(count == 2)
+
+# generate empty data frame for results
+kappa_results <- data.frame(variable = as.character(),
+                            kappa    = as.numeric(),
+                            percent  = as.numeric())
+
+#loop over all dichotomous variables
+for(i in kappa_variablen$variablen) {
+  
+  tmp_kappa <- kappa2(data.frame(rel[paste0("c1_", i)],
+                                 rel[paste0("c2_", i)]))
+  
+  tmp_perc <- agree(data.frame(rel[paste0("c1_", i)],
+                               rel[paste0("c2_", i)]))
+  
+  kappa_results <- kappa_results %>%
+    add_row(variable = i,
+            kappa    = tmp_kappa$value,
+            percent  = tmp_perc$value)
+}
+```
+
+## Agrement Results: Kappa
+
+Visualization and table of Cohen's kappa for each dichotomous variable.
+
+```{r kappa}
+# plot results kappa
+ggplot(kappa_results, aes(x=kappa)) +
+  geom_density(size=2) +
+  geom_dotplot() +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0), limits = c(0,1.1)) +
+  geom_vline(xintercept = .7, color="red", alpha=.5, linetype="dashed", size=1) +
+  theme_light()
+
+# results table
+# ordered by kappa
+kappa_results[order(kappa_results$kappa),] %>%
+  kbl() %>%
+  kable_styling()
+```
+
+## Agrement Results: Percentage
+
+Since the dichotomous response categories are sometimes distributed very skewed, even a few deviations lead to very small kappa values. Percentage matches are calculated accordingly.
+
+```{r perc}
+# plot results percent
+ggplot(kappa_results, aes(x=percent)) +
+  geom_density(size=1) +
+  geom_dotplot(binwidth = 1, size=2) +
+  scale_x_continuous(expand=c(0,0), limits = c(0,100)) +
+  scale_y_continuous(expand=c(0,0), limits = c(0,.075)) +
+  geom_vline(xintercept = 80, color="red", alpha=.5, linetype="dashed", size=1) +
+  theme_light()
+
+# results table
+# ordered by percent
+kappa_results[order(kappa_results$percent),] %>%
+  kbl() %>%
+  kable_styling()
+```
+
+## Agrement Results: Summary
+
+
+```{r summary1}
+# summary of results
+summary(kappa_results[2:3])
+```
+
+## Agrement Results: Summary grouped
+
+\
+
+__Kappa:__
+```{r summary2}
+# summary of results
+kappa_results %>%
+  group_by(str_sub(variable, 1, 3)) %>%
+  summarise(min = min(kappa),
+            max = max(kappa),
+            median = median(kappa)) %>%
+  kbl() %>%
+  kable_styling()
+```
+\
+\
+
+__Percent:__
+```{r summary3}
+# summary of results
+kappa_results %>%
+  group_by(str_sub(variable, 1, 3)) %>%
+  summarise(min = min(percent),
+            max = max(percent),
+            median = median(percent)) %>%
+  kbl() %>%
+  kable_styling()
+```
