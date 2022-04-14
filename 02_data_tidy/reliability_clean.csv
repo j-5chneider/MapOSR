@@ -1,0 +1,74 @@
+ID,c1_action,c1_method,c1_discipline,c1_group,c1_geo,c2_action,c2_method,c2_discipline,c2_group,c2_geo
+5,a=openaccess,m=biblio; m=documentreview,d=nonspecific,t=publisher,geo=ESP,a=openpolicies,m=biblio,,t=publisher,geo=ESP
+32,a=openaccess,m=other,d=nonspecific,t=other,geo=nonspecific,a=openevaluation,m=other,,t=publisher,geo=nonspecific
+88,a=opendata,m=documentreview; m=other,d=socscie,t=researcher,geo=nonspecific,a=opendata,m=biblio,d=socscie,t=researcher,geo=nonspecific
+133,a=openaccess,m=biblio,,t=librarian; t=researcher; t=publisher; t=university,geo=IRN,a=openaccess,m=biblio,,,geo=IRN
+204,a=openaccess,m=biblio,d=nonspecific,t=researcher,geo=nonspecific,a=openaccess,m=biblio,,,geo=nonspecific
+268,a=opendata,m=documentreview,d=nonspecific,t=other,geo=nonspecific,a=opendata,m=other,,t=publisher,geo=nonspecific
+293,a=openaccess,m=documentreview,,t=publisher; t=researcher,geo=nonspecific,a=openaccess,m=other,,t=publisher,geo=nonspecific
+325,a=openaccess,m=survey,d=nonspecific,t=researcher,geo=RUS,a=openaccess,m=survey; m=interview; m=other,,t=researcher,geo=RUS
+427,a=openaccess; a=opentools; a=openpolicies,m=documentreview; m=survey; m=interview,,t=librarian; t=other,geo=ESP,a=openpolicies,m=documentreview,d=socscie,t=librarian,geo=ESP
+485,a=openaccess,m=survey,d=nonspecific,t=researcher,geo=KEN,a=openaccess,m=survey,,t=researcher,geo=KEN
+516,a=openaccess,m=biblio,d=natscie,t=other,geo=nonspecific,a=openaccess,m=biblio,d=natscie,t=other,geo=nonspecific
+572,a=openaccess,m=survey,d=nonspecific,t=researcher,geo=GBR; geo=DEU; geo=ITA; geo=SWE; geo=ESP; geo=FRA; geo=NLD,a=openaccess,m=interview,d=engtech,t=researcher,geo=nonspecific
+615,a=opendata,m=survey,d=natscie; d=engtech; d=med,t=researcher,geo=nonspecific,a=opendata,m=survey,d=natscie,t=researcher,geo=nonspecific
+686,a=opendata,m=biblio; m=documentreview,d=natscie,t=other,geo=ITA,a=openevaluation,m=biblio,d=natscie,t=researcher,geo=ITA
+738,a=openaccess,m=survey; m=other,d=socscie,t=researcher,geo=nonspecific,a=openpolicies,m=survey,d=socscie,t=policy,geo=nonspecific
+764,a=openaccess,m=biblio,d=nonspecific,t=publisher,,a=openaccess,m=biblio,,,geo=nonspecific
+844,,,,,,a=opendata,m=biblio,d=socscie,t=other,geo=nonspecific
+867,,,,,,a=openpolicies,,d=socscie,t=researcher; t=policy; t=practitioner,geo=nonspecific
+885,a=openaccess,m=biblio,d=nonspecific,t=publisher,geo=nonspecific,a=openaccess,m=biblio,d=socscie,t=business,geo=nonspecific
+924,a=opendata,m=documentreview,d=nonspecific,t=other,geo=CAN; geo=GBR; geo=USA,a=opendata,m=biblio,d=socscie,t=practitioner; t=researcher,geo=nonspecific
+945,a=openaccess,m=other,d=nonspecific,t=researcher,geo=IND,a=openaccess,,d=socscie,t=researcher; t=policy; t=librarian,geo=IND
+991,a=openaccess,m=documentreview,d=engtech,t=researcher,geo=nonspecific,a=openaccess,m=biblio,d=socscie; d=natscie,t=researcher; t=practitioner; t=publisher,geo=nonspecific
+1013,a=openaccess,m=survey,d=natscie; d=socscie,t=researcher,geo=IND,a=openaccess,m=survey,d=socscie; d=natscie,t=researcher,geo=IND
+1032,,,,,,a=opendata,m=interview,,t=other,geo=nonspecific
+1301,a=openaccess,m=survey,d=natscie,t=researcher,geo=ARE,a=openaccess,m=survey,,t=researcher,geo=ARE
+1352,a=openaccess,m=interview,,t=researcher; t=librarian; t=unisupportstaff; t=policy,geo=AUS,a=openaccess,m=interview,,t=unisupportstaff,geo=AUS
+1392,a=opendata,m=other,,t=librarian,geo=SWE,a=openaccess,m=interview,,t=librarian,geo=SWE
+1444,a=openaccess,m=interview; m=other,d=med,t=other,geo=AUS; geo=NZL,a=openaccess,m=interview,d=med,t=librarian,geo=NZL
+1464,a=openaccess,m=biblio; m=documentreview,d=nonspecific,t=publisher,geo=nonspecific,a=openaccess,m=documentreview,,t=publisher,geo=nonspecific
+1482,a=openaccess,m=biblio,d=socscie,t=publisher,geo=nonspecific,a=openaccess,m=biblio,d=socscie,t=other,geo=nonspecific
+1524,a=opendata,m=other,d=natscie,t=researcher,geo=USA,a=openparticipation,m=other,d=natscie,t=researcher,geo=USA
+1556,,,,,,a=opensoftware,m=interview,d=natscie,t=practitioner,geo=FIN
+1597,,,,,,,,,,
+1627,a=opendata,m=interview,d=natscie,t=researcher,geo=nonspecific,a=opendata,m=other,d=natscie,t=other,geo=nonspecific
+1673,a=openaccess,m=biblio,d=med,t=other,geo=nonspecific,a=openaccess,m=biblio,d=med,t=other,geo=nonspecific
+1740,a=openaccess,m=survey,,t=university,geo=ESP,a=openaccess,m=survey,,t=university,geo=ESP
+1780,a=openaccess,m=biblio,,t=publisher,geo=SA,a=openaccess,m=biblio,,t=other,geo=SA
+1784,a=opendata,m=interview,,t=other,geo=BRA; geo=RUS; geo=IND; geo=CHN; geo=ZAR,a=openaccess,m=biblio,,t=other,geo=ZAF; geo=BRA; geo=CHN; geo=IND; geo=RUS
+1816,a=openaccess,m=other,d=natscie; d=engtech,t=researcher; t=business,geo=nonspecific,a=openaccess,m=other,,t=other,geo=nonspecific
+1853,a=openaccess,m=interview,d=hum; d=socscie,t=researcher,geo=NZL,a=openaccess,m=interview,,t=researcher,geo=AUS
+1897,a=openaccess,m=survey,,t=researcher,geo=GHA,a=openaccess; a=opentools,m=survey,,t=researcher,geo=GHA
+1928,a=opendata,m=biblio,d=nonspecific,t=publisher; t=other,geo=AF,a=opendata,m=biblio,,t=other,
+1976,a=openaccess,m=biblio,d=med,t=publisher,geo=nonspecific,a=openaccess,m=biblio,d=med,t=other,geo=nonspecific
+2015,,,,,,a=openaccess,m=survey,d=socscie,t=researcher,geo=nonspecific
+2112,a=openaccess,m=interview; m=documentreview,d=socscie; d=hum,t=publisher; t=other,geo=VEN,a=openaccess,,d=socscie,,geo=VEN
+2230,a=openaccess,m=documentreview,d=med,t=publisher,geo=nonspecific,a=openaccess,m=biblio,d=med,t=publisher,geo=nonspecific
+2245,,,,,,a=opentools,m=other,,t=researcher,geo=GRC
+2267,a=openaccess; a=openscience,m=documentreview,,t=policy; t=university,geo=nonspecific,a=openaccess; a=openpolicies,m=documentreview,,t=university,geo=nonspecific
+2313,a=openaccess,m=survey,d=med,t=publisher; t=researcher,geo=nonspecific,a=openaccess,m=survey,d=med,t=researcher,geo=nonspecific
+2342,a=openaccess,m=interview,,t=publisher,geo=CHN,a=openaccess,m=interview,,t=publisher,geo=CHN
+2372,a=openaccess,m=survey,,t=researcher,geo=BGD,a=openaccess,m=survey,,t=researcher,geo=BGD
+2398,a=openaccess,m=documentreview,,t=librarian,geo=IND,a=openaccess,m=documentreview; m=biblio,,t=university,geo=IND
+2417,a=openaccess; a=openevaluation,m=biblio; m=documentreview,d=med,t=publisher,geo=nonspecific; geo=DEU; geo=USA; geo=GBR; geo=NLD,a=openaccess,m=biblio,,t=publisher,geo=nonspecific
+2450,a=opendata,m=interview,,t=researcher; t=librarian,geo=SVN,a=opendata,m=interview,,t=researcher; t=unisupportstaff,geo=SVN
+2494,a=openaccess; a=openeducation,m=other; m=documentreview; m=survey,,t=other,,a=openaccess,m=documentreview; m=survey; m=other,d=engtech; d=hum; d=natscie,t=business; t=other,geo=USA
+2525,a=openaccess,m=survey,,t=researcher,geo=NA,a=openaccess,m=survey,,t=researcher,geo=USA
+2570,a=openaccess,m=biblio,d=nonspecific,t=publisher,geo=ESP,a=openaccess,m=biblio,,t=researcher; t=publisher,geo=ESP
+2684,a=openaccess; a=openpolicies,m=documentreview,,t=publisher; t=university; t=policy,geo=nonspecific,a=openaccess,m=biblio; m=documentreview,,t=funder,
+2752,a=openaccess,m=interview,d=natscie,t=researcher,geo=GBR,a=openaccess,m=interview,d=natscie,t=researcher,geo=GBR
+2793,a=openevaluation,m=documentreview,,t=publisher,geo=nonspecific,a=openevaluation,m=documentreview,d=nonspecific,t=publisher,geo=nonspecific
+2826,a=openaccess; a=openevaluation,m=biblio,d=nonspecific,t=publisher,geo=nonspecific,a=openaccess,m=biblio,d=natscie; d=med; d=hum; d=socscie,t=publisher,geo=nonspecific
+2894,a=openaccess; a=openpolicies,m=other,d=med,t=librarian; t=publisher,geo=GRC,a=openaccess; a=openpolicies,m=documentreview,d=nonspecific,t=librarian; t=university,geo=CYP
+2920,a=opendata; a=openpolicies,m=survey; m=documentreview,,t=other,geo=NLD,,,,,
+2941,a=opendata,m=documentreview; m=survey,d=nonspecific,t=researcher,geo=DEU,a=opendata,m=documentreview; m=survey,d=nonspecific,t=researcher,geo=nonspecific
+2952,a=openscience,m=interview; m=survey,d=med,t=researcher,geo=IRL,a=openscience,m=survey; m=interview,d=med,t=researcher,geo=IRL
+1058,a=opendata,m=survey,d=socscie,t=researcher,geo=USA,a=opendata,m=survey,d=socscie,t=researcher,geo=USA
+1088,a=openaccess,m=interview,d=med; d=socscie,t=researcher,geo=FIN,a=openaccess,m=documentreview,d=natscie; d=socscie,t=publisher,geo=nonspecific
+1112,a=openaccess,m=survey; m=documentreview; m=other,d=engtech; d=socscie; d=hum,t=publisher; t=researcher,geo=CHL,a=openaccess,m=documentreview; m=survey,d=hum,t=publisher,geo=CHL
+1159,,,,,,a=opendata,m=documentreview,,t=publisher,geo=nonspecific
+1186,,,,,,a=opendata,m=interview,,t=business,geo=GBR
+1229,,,,,,a=opendata,m=survey,d=hum,t=other,geo=JPN
+1255,,,,,,,,,,
+1280,a=openaccess,m=interview,d=nonspecific,t=researcher,geo=IND,,m=survey,,t=researcher,geo=IND

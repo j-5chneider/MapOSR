@@ -32,11 +32,11 @@ R.Version()
 
 # Import & Wrangling
 
-Data import. You can get the underlying data for this document on github ([github.com/JanaLasser/mapping-open-science-research](https://github.com/JanaLasser/mapping-open-science-research)) or `r xfun::embed_file(here::here("02_data_tidy/reliability.xlsx"), text="download it directly from this document")`.
+Data import. You can get the underlying data for this document on github ([github.com/JanaLasser/mapping-open-science-research](https://github.com/JanaLasser/mapping-open-science-research)) or `r xfun::embed_file(here::here("02_data_tidy/reliability_clean.csv"), text="download it directly from this document")`.
 
 ```{r import}
 # IMPORT ########################################################################
-rel <- rio::import(here::here("02_data_tidy/reliability.xlsx"))
+rel <- rio::import(here::here("02_data_tidy/reliability_clean.csv"))
 ```
 
 There were 5 categories to be coded:
